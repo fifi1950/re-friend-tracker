@@ -11,7 +11,7 @@ export class GuiModel {
                 {
                     "id": "FriendForm",
                     "title": "Friend",
-                    "url": "/friend/",
+                    "url": "/friend",
                     "formFieldList": [
                         {
                             "id": "familyName",
@@ -120,7 +120,7 @@ export class GuiModel {
                         {
                             "id": "name",
                             "type": "text",
-                            "name": "NameOfActivity",
+                            "name": "Name of Activity",
                             "width": 2,
                             "required": true
                         },
@@ -168,34 +168,6 @@ export class GuiModel {
                             "readonly": true,
                             "form": "ActivityForm",
                             "width": 2
-                        },
-						{
-							"id": "name",
-                            "type": "text",
-                            "name": "Name",
-                            "width": 2
-						},
-						{
-                            "id": "actvityDate",
-                            "type": "date",
-                            "name": "Date of activity",
-                            "width": 2
-                        },
-						{
-							"id": "location",
-							"type": "autocomplete",
-							"name": "Location",
-                            "url": "/location",
-                            "form": "LocationForm",
-                            "width": 2
-						},
-                        {
-                            "id": "comment",
-                            "type": "text",
-                            "name": "Comments",
-                            "width": 2,
-                            "height": 4,
-                            "maxLength": 5000,
                         },
 						
                         {
@@ -399,11 +371,10 @@ export class GuiModel {
                             "type": "backbutton",
                         },
                         {
-                            "type": "newButton",
+                            "type": "button",
                             "name": "EditFriend",
                             "icon": "fa-user",
                             "color": "magenta",
-							"url": "friend/",
                             "form": {
                                 "form": "FriendForm"
                             }
@@ -424,7 +395,7 @@ export class GuiModel {
                             "search": true,
                             "url": "/friend/:friendKey/activity",
                             "form": {
-                                "form": "FriendForm"
+                                "form": "AddActivityForm"
                             }
                         },
                     ]
@@ -436,30 +407,21 @@ export class GuiModel {
                             "type": "backbutton",
                         },
                         {
-                            "type": "newButton",
+                            "type": "button",
                             "name": "EditActivity",
                             "icon": "fa-braille",
                             "color": "turquoise",
-							"url": "friend/",
                             "form": {
-                                "form": "FriendForm"
+                                "form": "ActivityForm"
                             }
                         },
-						{
-							"type": "newButton",
-							"name": "AddActivity",
-							"icon": "fa-braille",
-							"color": "clouds",
-							"form": {
-								"form": "AddActivityForm",
-							}
-						},
+						
                         {
                             "type": "list",
                             "icon": "fa-braille",
                             "color": "turquoise",
                             "search": true,
-                            "url": "/activity/:friendKey/friend",
+                            "url": "/activity/:activityKey/friend",
                             "form": {
                                 "form": "FriendForm"
                             }
@@ -473,7 +435,7 @@ export class GuiModel {
                             "type": "backbutton",
                         },
                         {
-                            "type": "newButton",
+                            "type": "button",
                             "name": "EditLocation",
                             "icon": "fa-home",
                             "color": "blue",
@@ -489,7 +451,7 @@ export class GuiModel {
                             "search": true,
                             "url": "/location/:locationKey/activity",
                             "form": {
-                                "form": "LocationForm"
+                                "form": "ActivityForm"
                             }
                         },
                     ]
