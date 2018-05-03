@@ -395,7 +395,7 @@ export class GuiModel {
                             "search": true,
                             "url": "/friend/:friendKey/activity",
                             "form": {
-                                "form": "AddActivityForm"
+                                "form": "ActivityForm"
                             }
                         },
                     ]
